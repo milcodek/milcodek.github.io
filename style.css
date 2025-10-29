@@ -1,0 +1,413 @@
+/* 🌊 THE ULTIMATE WAVE – Premium Website CSS */
+
+/* ==============================
+   KLEUREN & BASISINSTELLINGEN
+   ============================== */
+:root {
+  --oranje: #ff9452;
+  --blauw: #2096be;
+  --wit: #ffffff;
+  --donkerblauw: #0b1222;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Poppins', Arial, sans-serif;
+  background-color: var(--blauw);
+  color: var(--wit);
+}
+
+/* ==============================
+   HEADER
+   ============================== */
+header {
+  background-color: rgba(255, 148, 82, 0.9);
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.8rem;
+  color: var(--wit);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+nav {
+  margin-top: 15px;
+}
+
+nav a {
+  color: var(--wit);
+  text-decoration: none;
+  margin: 0 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  opacity: 0.85;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  color: var(--wit);
+}
+
+/* 🌙 Toggle-knop */
+.theme-toggle {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--wit);
+  transition: transform 0.3s ease, color 0.3s ease;
+  user-select: none;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.2);
+  color: var(--oranje);
+}
+
+/* ==============================
+   HERO-SECTIE
+   ============================== */
+.hero {
+  position: relative;
+  height: 90vh;
+  background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80')
+    center/cover no-repeat;
+
+  /* Zorg dat de hero zichtbaar is onder de header */
+  margin-top: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 700px;
+  padding: 20px;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* CTA-knop */
+.cta-button {
+  background: linear-gradient(135deg, var(--oranje) 0%, #ff7a1f 100%);
+  color: var(--wit);
+  padding: 15px 35px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 148, 82, 0.3);
+}
+
+.cta-button:hover {
+  background: linear-gradient(135deg, #ffa96b 0%, #ff7a1f 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 148, 82, 0.4);
+}
+
+/* ==============================
+   PRODUCT-SECTIE
+   ============================== */
+.products {
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.product-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 30px 20px;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.product-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.product-card p {
+  font-size: 1rem;
+  color: #eaeaea;
+}
+
+/* ==============================
+   CONTACTPAGINA
+   ============================== */
+.contact-main {
+  margin-top: 220px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px 100px;
+}
+
+.contact-section {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  color: var(--wit);
+  margin-bottom: 10px;
+}
+
+.contact-section p {
+  color: #eee;
+  font-size: 1rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.contact-form label {
+  display: block;
+  text-align: left;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: var(--wit);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #666;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 50px;
+}
+
+/* ==============================
+   FOOTER
+   ============================== */
+footer {
+  background-color: var(--oranje);
+  height: 200px;
+  color: var(--wit);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1rem;
+  margin-top: auto;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* ==============================
+   OVERGANG & ANIMATIES
+   ============================== */
+*,
+*::before,
+*::after {
+  transition: background-color 0.4s ease, 
+              color 0.4s ease, 
+              box-shadow 0.4s ease, 
+              border-color 0.4s ease;
+}
+
+/* ==============================
+   DARK MODE
+   ============================== */
+body.dark-mode {
+  background-color: var(--donkerblauw);
+  color: #eaeaea;
+}
+
+body.dark-mode header {
+  background-color: #14254a;
+}
+
+body.dark-mode nav {
+  background-color: #0d1830;
+}
+
+body.dark-mode footer {
+  background-color: #0d1830;
+  color: #ccc !important;
+}
+
+body.dark-mode a {
+  color: var(--oranje);
+}
+
+body.dark-mode .cta-button {
+  background: linear-gradient(135deg, #ffb347 0%, #ff8800 100%);
+  color: #111;
+}
+
+body.dark-mode .product-card {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .contact-section {
+  background-color: rgba(25, 35, 55, 0.9);
+}
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+  background-color: #1b2438;
+  color: #fff;
+}
+
+body.dark-mode .contact-form input::placeholder,
+body.dark-mode .contact-form textarea::placeholder {
+  color: #bbb;
+}
+
+body.dark-mode .contact-section h2 {
+  color: var(--oranje);
+}
+
+/* Toggle zichtbaar in dark mode */
+body.dark-mode .theme-toggle {
+  color: #fff;
+}
+
+/* ==============================
+   RESPONSIEF ONTWERP
+   ============================== */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .product-grid {
+    gap: 25px;
+  }
+
+  .contact-section {
+    padding: 25px;
+  }
+}
+
+/* PRODUCTENPAGINA */
+.product-main {
+  margin-top: 220px;
+  padding: 60px 40px 100px;
+  text-align: center;
+}
+
+.product-intro {
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+.product-intro h2 {
+  font-size: 2.4rem;
+  margin-bottom: 15px;
+}
+
+.product-intro p {
+  font-size: 1.1rem;
+  color: #f5f5f5;
+  line-height: 1.6;
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* Dark mode */
+body.dark-mode .product-intro p {
+  color: #ddd;
+}

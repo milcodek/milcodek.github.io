@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact – The Ultimate Wave</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>The Ultimate Wave</h1>
+    <nav>
+  <a href="index.html">Home</a>
+  <a href="producten.html">Producten</a>
+  <a href="over.html">Over ons</a>
+  <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <!-- 🌙 / 🌞 Toggle -->
+    <div class="theme-toggle" id="theme-toggle" title="Schakel licht/donker modus">
+      🌙
+    </div>
+  </header>
+
+  <main class="contact-main">
+    <section class="contact-section">
+      <h2>Neem contact met ons op</h2>
+      <p>Heb je vragen over onze surfgear of wil je advies over de perfecte uitrusting?  
+         Vul hieronder je gegevens in — we nemen zo snel mogelijk contact met je op.</p>
+
+      <form action="https://submit-form.com/z985cXKqB" method="POST" class="contact-form">
+        <!-- Redirect na verzenden -->
+        <input type="hidden" name="_redirect" value="https://jouwdomein.be/bedankt.html">
+
+        <label for="naam">Naam:</label>
+        <input type="text" id="naam" name="naam" placeholder="Jouw naam" required>
+
+        <label for="email">E-mailadres:</label>
+        <input type="email" id="email" name="email" placeholder="naam@voorbeeld.com" required>
+
+        <label for="bericht">Bericht:</label>
+        <textarea id="bericht" name="bericht" rows="5" placeholder="Typ hier je bericht..." required></textarea>
+
+        <button type="submit" class="btn-primary">Verzenden</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 The Ultimate Wave – Premium Surfgear
+  </footer>
+
+  <script src="scripts/theme-toggle.js"></script>
+</body>
+</html>
