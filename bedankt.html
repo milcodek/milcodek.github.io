@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bedankt! | Repareer mijn PC</title>
+    <link rel="stylesheet" href="stijl.css">
+    <style>
+        /* Specifieke styling voor de bedankpagina */
+        .thankyou-content {
+            min-height: 70vh; /* Zorgt ervoor dat de pagina voldoende scherm vult */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .thankyou-content h1 {
+            color: #2ecc71; /* Groene kleur voor succes */
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        
+        .thankyou-content p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin-bottom: 30px;
+            color: #ecf0f1;
+        }
+
+        .thankyou-content .icon {
+            font-size: 60px;
+            color: #f39c12;
+            margin-bottom: 20px;
+        }
+
+        .back-button {
+            background-color: #f39c12;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #e67e22;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Repareer mijn PC</a>
+            <nav>
+                <ul>
+                    <li><a href="#">Algemene voorwaarden</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="spacer"></div>
+
+    <section class="thankyou-content">
+        <div class="icon">✅</div>
+        <h1>Bedankt voor uw aanvraag!</h1>
+        <p>Uw aanvraag is succesvol ontvangen en ons team zal deze zo snel mogelijk verwerken. Wij streven ernaar om binnen **24 uur** contact met u op te nemen om de afspraak te bevestigen.</p>
+        <a href="index.html" class="back-button">Terug naar de homepage</a>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Repareer mijn PC. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+</body>
+</html>
