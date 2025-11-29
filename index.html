@@ -65,7 +65,7 @@
             <h2>Maak vandaag nog een afspraak en geniet van de voordelen van een voordelige service aan huis</h2>
             <form action="https://submit-form.com/HEXSGro8S" method="POST" onsubmit="return validateForm();">
                 
-                <input type="hidden" name="_redirect" value="https://milcodek.github.io/bedankt.html" />
+                <input type="hidden" name="_redirect" value="https://milcodek.github.io/bedankt.html?" />
 
                 <input type="hidden" name="_replyto" value="repareermijnpc@protonmail.be">
 
@@ -159,13 +159,13 @@
 
             if (!checkedOne) {
                 const label = document.getElementById('probleem-label');
-                label.style.color = '#e74c3c'; // Rood
+                label.style.color = '#e74c3c'; 
                 
                 alert("Selecteer alstublieft minimaal één probleemtype.");
                 return false; 
             }
             
-            document.getElementById('probleem-label').style.color = '#bdc3c7'; // Originele kleur
+            document.getElementById('probleem-label').style.color = '#bdc3c7'; 
             return true;
         }
     </script>
