@@ -65,7 +65,7 @@
             <h2>Maak vandaag nog een afspraak en geniet van de voordelen van een voordelige service aan huis</h2>
             <form action="https://submit-form.com/HEXSGro8S" method="POST" onsubmit="return validateForm();">
                 
-                <input type="hidden" name="_redirect" value="bedankt.html" />
+                <input type="hidden" name="_redirect" value="https://milcodek.github.io/bedankt.html" />
 
                 <input type="hidden" name="_replyto" value="repareermijnpc@protonmail.be">
 
@@ -150,7 +150,6 @@
             const checkboxes = document.querySelectorAll('input[name="Probleem[]"]');
             let checkedOne = false;
             
-            // Controleer of er minstens één checkbox is aangevinkt
             for (let i = 0; i < checkboxes.length; i++) {
                 if (checkboxes[i].checked) {
                     checkedOne = true;
@@ -158,17 +157,15 @@
                 }
             }
 
-            // Als er niets is aangevinkt, geef dan een melding en blokkeer de verzending
             if (!checkedOne) {
                 const label = document.getElementById('probleem-label');
-                label.style.color = '#e74c3c'; // Visuele hint: rode kleur
+                label.style.color = '#e74c3c'; // Rood
                 
                 alert("Selecteer alstublieft minimaal één probleemtype.");
                 return false; 
             }
             
-            // Verwijder de rode kleur als de validatie slaagt
-            document.getElementById('probleem-label').style.color = '#bdc3c7'; 
+            document.getElementById('probleem-label').style.color = '#bdc3c7'; // Originele kleur
             return true;
         }
     </script>
