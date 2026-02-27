@@ -19,6 +19,7 @@
             --steel-blue: #78a1bb;
             --mint-cream: #ebf5ee;
             --font-size-base: 1.2rem;
+            --exact-spacing: 60px; 
         }
 
         body {
@@ -30,6 +31,26 @@
             font-size: var(--font-size-base);
             line-height: 1.6;
             scroll-behavior: smooth;
+        }
+
+        h2, h3 { margin-top: 0; }
+
+        .main-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: var(--exact-spacing) 20px;
+            display: flex;
+            flex-direction: column;
+            gap: var(--exact-spacing);
+        }
+
+        /* De spacer die de ruimte tussen USP en formulier forceert */
+        .spacer-60 {
+            height: var(--exact-spacing);
+            width: 100%;
+            display: block;
+            margin: 0;
+            padding: 0;
         }
 
         .text-resizer {
@@ -56,7 +77,7 @@
 
         .map-container {
             width: 100%;
-            height: 300px;
+            height: 350px;
             border-bottom: 5px solid var(--steel-blue);
             background-color: #e5e3df;
         }
@@ -64,10 +85,10 @@
         .header-container {
             background-color: var(--space-indigo);
             color: white;
-            padding: 4rem 1rem;
+            padding: 60px 20px;
             text-align: center;
             border-bottom: 5px solid var(--steel-blue);
-            overflow: hidden;
+            margin-top: var(--exact-spacing);
         }
 
         .header-container h1 {
@@ -79,36 +100,20 @@
             white-space: nowrap;
         }
 
-        .header-container p {
-            font-size: 1.3rem;
-            margin-top: 0.5rem;
-            opacity: 0.9;
-        }
-
-        .main-wrapper {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
         .section-card {
             background: white;
-            padding: 2.5rem;
+            padding: 40px;
             border-radius: 8px;
             border: 1px solid var(--steel-blue);
-            margin-bottom: 2rem;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
-        .intro-container { margin-top: -2.5rem; position: relative; }
-
         .photo-carousel-container {
-            position: relative;
-            margin: 2rem 0;
             background: white;
-            padding: 1rem;
+            padding: 20px;
             border-radius: 8px;
             border: 1px solid var(--steel-blue);
+            position: relative;
         }
 
         .photo-carousel {
@@ -116,11 +121,10 @@
             overflow-x: hidden;
             gap: 15px;
             scroll-behavior: smooth;
-            padding: 10px 0;
         }
 
         .photo-carousel img {
-            height: 180px;
+            height: 200px;
             border-radius: 6px;
             cursor: pointer;
             flex-shrink: 0;
@@ -140,8 +144,56 @@
             z-index: 10;
         }
 
-        .nav-prev { left: -20px; }
-        .nav-next { right: -20px; }
+        .nav-prev { left: 5px; }
+        .nav-next { right: 5px; }
+
+        .usp-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+            gap: 20px; 
+            align-items: stretch;
+            margin: 0;
+        }
+
+        .usp-card { 
+            background: white; 
+            padding: 30px; 
+            border-radius: 8px; 
+            border: 1px solid var(--steel-blue); 
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .usp-icon-wrapper { color: var(--steel-blue); margin-bottom: 15px; display: flex; justify-content: center; }
+        .usp-card p { flex-grow: 1; margin-bottom: 0; }
+
+        .form-row { display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 15px; }
+        .form-group { flex: 1; min-width: 200px; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; }
+        input, textarea { width: 100%; padding: 12px; border: 2px solid var(--steel-blue); border-radius: 6px; font-size: 1.1rem; box-sizing: border-box; }
+
+        .problem-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr;
+            gap: 10px; 
+            margin: 20px 0; 
+        }
+        .problem-option input { display: none; }
+        .problem-card { display: block; padding: 15px; background: white; border: 2px solid var(--steel-blue); border-radius: 8px; cursor: pointer; text-align: center; font-weight: 500; }
+        .problem-option input:checked + .problem-card { background: var(--steel-blue); color: white; }
+        
+        .submit-btn { width: 100%; background: var(--space-indigo); color: white; padding: 20px; font-size: 1.4rem; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; margin-top: 20px; }
+
+        footer { 
+            background: var(--space-indigo); 
+            color: white; 
+            padding: 50px 20px; 
+            text-align: center; 
+            margin-top: var(--exact-spacing);
+        }
+        footer a { color: var(--steel-blue); text-decoration: none; }
 
         #lightbox {
             display: none;
@@ -151,32 +203,16 @@
             z-index: 2000;
             justify-content: center; align-items: center;
         }
-
         #lightbox img { max-width: 90%; max-height: 80%; border: 5px solid white; }
 
-        .usp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2.5rem 0; }
-        .usp-card { background: white; padding: 2rem; border-radius: 8px; border: 1px solid var(--steel-blue); text-align: center; }
-        .usp-icon-wrapper { color: var(--steel-blue); margin-bottom: 1rem; }
-
-        .form-row { display: flex; gap: 1rem; flex-wrap: wrap; }
-        .form-group { flex: 1; min-width: 200px; margin-bottom: 1rem; }
-        label { display: block; margin-bottom: 0.5rem; font-weight: bold; }
-        input, textarea { width: 100%; padding: 0.9rem; border: 2px solid var(--steel-blue); border-radius: 6px; font-size: 1.1rem; box-sizing: border-box; }
-
-        .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
-        .problem-option input { display: none; }
-        .problem-card { display: block; padding: 1.2rem; background: white; border: 2px solid var(--steel-blue); border-radius: 8px; cursor: pointer; text-align: center; font-weight: 500; }
-        .problem-option input:checked + .problem-card { background: var(--steel-blue); color: white; }
-        
-        .submit-btn { width: 100%; background: var(--space-indigo); color: white; padding: 1.5rem; font-size: 1.4rem; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; }
-
-        footer { background: var(--space-indigo); color: white; padding: 3rem 1rem; text-align: center; }
-        footer a { color: var(--steel-blue); }
-
         @media(max-width: 768px) { 
-            .problem-grid { grid-template-columns: 1fr; }
+            .header-container h1 { white-space: normal; line-height: 1.2; }
             .nav-btn { display: none; }
             .photo-carousel { overflow-x: auto; }
+            .problem-grid { grid-template-columns: 1fr; }
+            .main-wrapper { gap: 40px; padding: 40px 15px; }
+            .spacer-60 { height: 40px; }
+            footer, .header-container { margin-top: 40px; }
         }
     </style>
 </head>
@@ -193,14 +229,8 @@
     </div>
 
     <div class="map-container">
-        <iframe 
-            width="100%" 
-            height="100%" 
-            style="border:0;" 
-            loading="eager" 
-            allowfullscreen 
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2500.551608933393!2d3.222384915758652!3d51.20934797946467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c350d032fb130d%3A0xe24f2af4fdbe0cc4!2sGrote%20Markt%2C%208000%20Brugge!5e0!3m2!1snl!2sbe!4v1690000000000!5m2!1snl!2sbe">
+        <iframe width="100%" height="100%" style="border:0;" loading="eager" allowfullscreen 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2500.222300000000!2d3.2242!3d51.2093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c350d03923508d%3A0xc6655555ef1c6b1c!2sMarkt%2C%208000%20Brugge!5e0!3m2!1snl!2sbe!4v1700000000000">
         </iframe>
     </div>
 
@@ -210,12 +240,12 @@
     </header>
 
     <div class="main-wrapper">
-        <section class="section-card intro-container">
+        <section class="section-card">
             <h2>Uw computer weer als nieuw</h2>
             <p>Heeft u het gevoel dat uw computer trager is geworden? Ik help u graag om uw toestel weer vlot en veilig te laten werken. Ik kom bij u langs in Brugge, haal de computer op en breng hem keurig hersteld weer terug.</p>
         </section>
 
-        <section class="section-card" style="background-color: var(--mint-cream);">
+        <section class="section-card">
             <h3>Wie komt er bij u langs?</h3>
             <p>Mijn naam is <strong>Milco de Kruijter</strong>. Ik neem de tijd voor uw vragen en leg alles uit in normale taal. Een persoonlijke band met mijn klanten in Brugge vind ik het allerbelangrijkste.</p>
         </section>
@@ -223,53 +253,77 @@
         <div class="photo-carousel-container">
             <button class="nav-btn nav-prev" onclick="scrollCarousel(-300)"><i data-lucide="chevron-left"></i></button>
             <div class="photo-carousel" id="carousel">
-                <img src="https://picsum.photos/id/1015/600/400" onclick="openLightbox(this.src)" alt="Brugge 1">
-                <img src="https://picsum.photos/id/1016/600/400" onclick="openLightbox(this.src)" alt="Brugge 2">
-                <img src="https://picsum.photos/id/1043/600/400" onclick="openLightbox(this.src)" alt="Brugge 3">
-                <img src="https://picsum.photos/id/1040/600/400" onclick="openLightbox(this.src)" alt="Brugge 4">
-                <img src="https://picsum.photos/id/1041/600/400" onclick="openLightbox(this.src)" alt="Brugge 5">
+                <img src="https://media.istockphoto.com/id/1175383349/photo/traditional-canal-houses-of-bruges-belgium.webp?b=1&s=612x612&w=0&k=20&c=omiLTCb-ujn7iB1uBDHRcygVMkLfvWX6anwqaiTvE5g=" onclick="openLightbox(this.src)" alt="Brugge 1">
+                <img src="https://media.istockphoto.com/id/477727324/photo/bruges.webp?b=1&s=612x612&w=0&k=20&c=mBJa-XLln5yDadW-ip-gqLiqTWN5XTPe5L9jri8xgqI=" onclick="openLightbox(this.src)" alt="Brugge 2">
+                <img src="https://cdn.pixabay.com/photo/2021/08/26/00/40/river-6574718_1280.jpg" onclick="openLightbox(this.src)" alt="Brugge 3">
+                <img src="https://cdn.pixabay.com/photo/2016/07/10/19/49/bruges-1508382_1280.jpg" onclick="openLightbox(this.src)" alt="Brugge 4">
+                <img src="https://cdn.pixabay.com/photo/2021/08/21/14/57/bruges-6563034_1280.jpg" onclick="openLightbox(this.src)" alt="Brugge 5">
             </div>
             <button class="nav-btn nav-next" onclick="scrollCarousel(300)"><i data-lucide="chevron-right"></i></button>
         </div>
 
         <section class="usp-grid">
             <div class="usp-card">
-                <div class="usp-icon-wrapper"><i data-lucide="heart" size="40"></i></div>
+                <div class="usp-icon-wrapper"><i data-lucide="heart" style="width: 60px; height: 60px; stroke-width: 1.5px;"></i></div>
                 <h3>Persoonlijke Service</h3>
-                <p>Ik kom bij u thuis langs en leg alles rustig uit.</p>
+                <p>Ik kom bij u thuis in Brugge, neem uitgebreid de tijd voor uw vragen en leg de oplossing uit in begrijpelijke taal zonder technisch jargon.</p>
             </div>
             <div class="usp-card">
-                <div class="usp-icon-wrapper"><i data-lucide="piggy-bank" size="40"></i></div>
-                <h3>Eerlijke Kosten</h3>
-                <p>Herstellen is vaak voordeliger dan een nieuw toestel kopen.</p>
+                <div class="usp-icon-wrapper"><i data-lucide="piggy-bank" style="width: 60px; height: 60px; stroke-width: 1.5px;"></i></div>
+                <h3>Prijs/kwaliteit</h3>
+                <p>U geniet van professionele computerhulp tegen een eerlijk tarief. Een transparante service waarbij de herstelling van uw toestel altijd centraal staat.</p>
             </div>
             <div class="usp-card">
-                <div class="usp-icon-wrapper"><i data-lucide="shield-check" size="40"></i></div>
-                <h3>Grondig Onderhoud</h3>
-                <p>Ik maak uw toestel schoon en controleer de beveiliging.</p>
+                <div class="usp-icon-wrapper"><i data-lucide="leaf" style="width: 60px; height: 60px; stroke-width: 1.5px;"></i></div>
+                <h3>Milieubewust</h3>
+                <p>Door te kiezen voor reparatie verminderen we samen de afvalberg. Een duurzame keuze die goed is voor de planeet én uw portemonnee.</p>
+            </div>
+            <div class="usp-card">
+                <div class="usp-icon-wrapper"><i data-lucide="shield-check" style="width: 60px; height: 60px; stroke-width: 1.5px;"></i></div>
+                <h3>Zorgeloze Beveiliging</h3>
+                <p>Ik optimaliseer uw antivirus, controleer uw back-ups en beveilig uw wachtwoorden, zodat u met een gerust hart kunt surfen.</p>
             </div>
         </section>
 
-        <section class="form-section section-card">
+        <div class="spacer-60"></div>
+
+        <section class="section-card">
             <h2>Vraag hier uw hulp aan</h2>
             <form action="https://formspree.io/f/mgoldbkk" method="POST">
                 <div class="form-row">
-                    <div class="form-group"><label>Voornaam</label><input type="text" name="voornaam" required></div>
-                    <div class="form-group"><label>Achternaam</label><input type="text" name="naam" required></div>
+                    <div class="form-group"><label>Voornaam</label><input type="text" name="voornaam" placeholder="Arnold" required></div>
+                    <div class="form-group"><label>Achternaam</label><input type="text" name="naam" placeholder="Janssens" required></div>
                 </div>
                 <div class="form-row">
-                    <div class="form-group"><label>Telefoonnummer</label><input type="tel" name="gsm" required></div>
-                    <div class="form-group"><label>E-mailadres</label><input type="email" name="email" required></div>
+                    <div class="form-group"><label>Telefoonnummer</label><input type="tel" name="gsm" placeholder="0499 12 34 56" required></div>
+                    <div class="form-group"><label>E-mailadres</label><input type="email" name="email" placeholder="uw@email.be" required></div>
                 </div>
                 <div class="form-row">
                     <div class="form-group" style="flex:3"><label>Straat</label><input type="text" name="straat" required></div>
                     <div class="form-group" style="flex:1"><label>Nr.</label><input type="text" name="huisnr" required></div>
+                    <div class="form-group" style="flex:1"><label>Bus</label><input type="text" name="bus"></div>
                 </div>
+                <div class="form-row">
+                    <div class="form-group" style="flex:1"><label>Postcode</label><input type="text" name="postcode" required></div>
+                    <div class="form-group" style="flex:3"><label>Woonplaats</label><input type="text" name="woonplaats" required></div>
+                </div>
+
+                <label style="margin-top: 1.5rem;">Waarmee kan ik u helpen?</label>
                 <div class="problem-grid">
-                    <label class="problem-option"><input type="checkbox" name="p1"><span class="problem-card">De computer is traag</span></label>
-                    <label class="problem-option"><input type="checkbox" name="p2"><span class="problem-card">E-mail of wachtwoorden</span></label>
-                    <label class="problem-option"><input type="checkbox" name="p3"><span class="problem-card">Hij wordt warm / lawaai</span></label>
-                    <label class="problem-option"><input type="checkbox" name="p4"><span class="problem-card">Iets anders...</span></label>
+                    <label class="problem-option"><input type="checkbox" name="Traag"><span class="problem-card">De computer is traag</span></label>
+                    <label class="problem-option"><input type="checkbox" name="Mail"><span class="problem-card">E-mail of wachtwoorden</span></label>
+                    <label class="problem-option"><input type="checkbox" name="Warm"><span class="problem-card">Hij wordt warm / lawaai</span></label>
+                    <label class="problem-option"><input type="checkbox" name="Fotos"><span class="problem-card">Foto's overzetten</span></label>
+                    <label class="problem-option"><input type="checkbox" name="Beveiliging"><span class="problem-card">Beveiliging controleren</span></label>
+                    <label class="problem-option"><input type="checkbox" name="Printer"><span class="problem-card">Printer aansluiten</span></label>
+                    <label class="problem-option"><input type="checkbox" name="Videobellen"><span class="problem-card">Leren videobellen</span></label>
+                    <label class="problem-option"><input type="checkbox" name="Meldingen"><span class="problem-card">Vreemde meldingen</span></label>
+                    <label class="problem-option"><input type="checkbox" name="Backup"><span class="problem-card">Back-up maken</span></label>
+                    <label class="problem-option"><input type="checkbox" name="Overig"><span class="problem-card">Iets anders...</span></label>
+                </div>
+                <div class="form-group">
+                    <label>Extra uitleg</label>
+                    <textarea name="bericht" rows="3" placeholder="Vertel hier kort wat u ervaart..."></textarea>
                 </div>
                 <button type="submit" class="submit-btn">Verzend mijn vraag veilig</button>
             </form>
@@ -279,7 +333,8 @@
     <footer>
         <h3>Repareermijnpc - Brugge</h3>
         <p>BTW: BE 0123.456.789</p>
-        <p>© 2026 Repareermijnpc. Contact: repareermijnpc@protonmail.com</p>
+        <p><a href="#privacy">Privacybeleid</a> | <a href="#cookies">Cookiebeleid</a> | <a href="#voorwaarden">Algemene Voorwaarden</a></p>
+        <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.7;">© 2026 Repareermijnpc. Contact: repareermijnpc@protonmail.com</p>
     </footer>
 
     <script>
@@ -296,9 +351,7 @@
             document.getElementById('lightbox-img').src = src;
             document.getElementById('lightbox').style.display = 'flex';
         }
-        function closeLightbox() {
-            document.getElementById('lightbox').style.display = 'none';
-        }
+        function closeLightbox() { document.getElementById('lightbox').style.display = 'none'; }
     </script>
 </body>
 </html>
