@@ -8,6 +8,10 @@
     
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23a3e3e6'/%3E%3C/svg%3E">
 
+    <link rel="preconnect" href="https://www.google.com">
+    <link rel="preconnect" href="https://maps.googleapis.com">
+    <link rel="preconnect" href="https://maps.gstatic.com" crossorigin>
+
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         :root {
@@ -54,7 +58,7 @@
             width: 100%;
             height: 300px;
             border-bottom: 5px solid var(--steel-blue);
-            background-color: #e5e3df; /* Tijdelijke kleur tijdens laden */
+            background-color: #e5e3df;
         }
 
         .header-container {
@@ -68,7 +72,6 @@
 
         .header-container h1 {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            /* Mobiel-vriendelijke schaling */
             font-size: clamp(1.8rem, 9vw, 3.5rem); 
             font-weight: 800;
             letter-spacing: -1px;
@@ -194,10 +197,10 @@
             width="100%" 
             height="100%" 
             style="border:0;" 
-            loading="lazy" 
+            loading="eager" 
             allowfullscreen 
             referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2500.518605051016!2d3.222384915998103!3d51.208920179457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c350bc23fb130d%3A0xc49c4a43fdee0cc4!2sMarkt%2C%208000%20Brugge!5e0!3m2!1snl!2sbe!4v1714550000000!5m2!1snl!2sbe">
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2500.551608933393!2d3.222384915758652!3d51.20934797946467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c350d032fb130d%3A0xe24f2af4fdbe0cc4!2sGrote%20Markt%2C%208000%20Brugge!5e0!3m2!1snl!2sbe!4v1690000000000!5m2!1snl!2sbe">
         </iframe>
     </div>
 
@@ -248,52 +251,35 @@
         </section>
 
         <section class="form-section section-card">
-            <div class="form-wrapper">
-                <h2>Vraag hier uw hulp aan</h2>
-                <form action="https://formspree.io/f/mgoldbkk" method="POST">
-                    <div class="form-row">
-                        <div class="form-group"><label>Voornaam</label><input type="text" name="voornaam" placeholder="Arnold" required></div>
-                        <div class="form-group"><label>Achternaam</label><input type="text" name="naam" placeholder="Janssens" required></div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group"><label>Telefoonnummer</label><input type="tel" name="gsm" placeholder="0499 12 34 56" required></div>
-                        <div class="form-group"><label>E-mailadres</label><input type="email" name="email" placeholder="uw@email.be" required></div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group" style="flex:3"><label>Straat</label><input type="text" name="straat" required></div>
-                        <div class="form-group" style="flex:1"><label>Nr.</label><input type="text" name="huisnr" required></div>
-                        <div class="form-group" style="flex:1"><label>Bus</label><input type="text" name="bus"></div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group" style="flex:1"><label>Postcode</label><input type="text" name="postcode" required></div>
-                        <div class="form-group" style="flex:3"><label>Woonplaats</label><input type="text" name="woonplaats" required></div>
-                    </div>
-
-                    <label style="margin-top: 1.5rem;">Waarmee kan ik u helpen?</label>
-                    <div class="problem-grid">
-                        <label class="problem-option"><input type="checkbox" name="p1"><span class="problem-card">De computer is traag</span></label>
-                        <label class="problem-option"><input type="checkbox" name="p2"><span class="problem-card">E-mail of wachtwoorden</span></label>
-                        <label class="problem-option"><input type="checkbox" name="p3"><span class="problem-card">Hij wordt warm / lawaai</span></label>
-                        <label class="problem-option"><input type="checkbox" name="p4"><span class="problem-card">Foto's overzetten</span></label>
-                        <label class="problem-option"><input type="checkbox" name="p5"><span class="problem-card">Beveiliging controleren</span></label>
-                        <label class="problem-option"><input type="checkbox" name="p6"><span class="problem-card">Printer aansluiten</span></label>
-                        <label class="problem-option"><input type="checkbox" name="p7"><span class="problem-card">Leren videobellen</span></label>
-                        <label class="problem-option"><input type="checkbox" name="p8"><span class="problem-card">Vreemde meldingen</span></label>
-                        <label class="problem-option"><input type="checkbox" name="p9"><span class="problem-card">Back-up maken</span></label>
-                        <label class="problem-option"><input type="checkbox" name="p10"><span class="problem-card">Iets anders...</span></label>
-                    </div>
-
-                    <button type="submit" class="submit-btn">Verzend mijn vraag veilig</button>
-                </form>
-            </div>
+            <h2>Vraag hier uw hulp aan</h2>
+            <form action="https://formspree.io/f/mgoldbkk" method="POST">
+                <div class="form-row">
+                    <div class="form-group"><label>Voornaam</label><input type="text" name="voornaam" required></div>
+                    <div class="form-group"><label>Achternaam</label><input type="text" name="naam" required></div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group"><label>Telefoonnummer</label><input type="tel" name="gsm" required></div>
+                    <div class="form-group"><label>E-mailadres</label><input type="email" name="email" required></div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group" style="flex:3"><label>Straat</label><input type="text" name="straat" required></div>
+                    <div class="form-group" style="flex:1"><label>Nr.</label><input type="text" name="huisnr" required></div>
+                </div>
+                <div class="problem-grid">
+                    <label class="problem-option"><input type="checkbox" name="p1"><span class="problem-card">De computer is traag</span></label>
+                    <label class="problem-option"><input type="checkbox" name="p2"><span class="problem-card">E-mail of wachtwoorden</span></label>
+                    <label class="problem-option"><input type="checkbox" name="p3"><span class="problem-card">Hij wordt warm / lawaai</span></label>
+                    <label class="problem-option"><input type="checkbox" name="p4"><span class="problem-card">Iets anders...</span></label>
+                </div>
+                <button type="submit" class="submit-btn">Verzend mijn vraag veilig</button>
+            </form>
         </section>
     </div>
 
     <footer>
         <h3>Repareermijnpc - Brugge</h3>
         <p>BTW: BE 0123.456.789</p>
-        <p><a href="#privacy">Privacybeleid</a> | <a href="#cookies">Cookiebeleid</a> | <a href="#voorwaarden">Algemene Voorwaarden</a></p>
-        <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.7;">© 2026 Repareermijnpc. Contact: repareermijnpc@protonmail.com</p>
+        <p>© 2026 Repareermijnpc. Contact: repareermijnpc@protonmail.com</p>
     </footer>
 
     <script>
